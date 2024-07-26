@@ -1,19 +1,9 @@
---[[
-
-	Wall Hack Module [AirHub] by Exunys © CC0 1.0 Universal (2023)
-
-	https://github.com/Exunys
-
-]]
-
---// Cache
-
 local select, next, tostring, pcall, getgenv, setmetatable, mathfloor, mathabs, mathcos, mathsin, mathrad, wait = select, next, tostring, pcall, getgenv, setmetatable, math.floor, math.abs, math.cos, math.sin, math.rad, task.wait
 local WorldToViewportPoint, Vector2new, Vector3new, Vector3zero, CFramenew, Drawingnew, Color3fromRGB = nil, Vector2.new, Vector3.new, Vector3.zero, CFrame.new, Drawing.new, Color3.fromRGB
 
 --// Launching checks
 
-if not getgenv().AirHub or getgenv().AirHub.WallHack then return end
+if not getgenv().Eclipse or getgenv().Eclipse.WallHack then return end
 
 --// Services
 
@@ -29,7 +19,7 @@ local ServiceConnections = {}
 
 --// Environment
 
-getgenv().AirHub.WallHack = {
+getgenv().Config.WallHack = {
 	Settings = {
 		Enabled = false,
 		TeamCheck = false,
@@ -128,7 +118,7 @@ getgenv().AirHub.WallHack = {
 	WrappedPlayers = {}
 }
 
-local Environment = getgenv().AirHub.WallHack
+local Environment = getgenv().Config.WallHack
 
 --// Core Functions
 
@@ -866,8 +856,8 @@ function Environment.Functions:Exit()
 		end
 	end
 
-	getgenv().AirHub.WallHack.Functions = nil
-	getgenv().AirHub.WallHack = nil
+	getgenv().Config.WallHack.Functions = nil
+	getgenv().Config.WallHack = nil
 
 	Load = nil; GetPlayerTable = nil; AssignRigType = nil; InitChecks = nil; UpdateCham = nil; Visuals = nil; Wrap = nil; UnWrap = nil
 end
