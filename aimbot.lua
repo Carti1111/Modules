@@ -1,18 +1,8 @@
---[[
-
-	Aimbot Module [AirHub] by Exunys © CC0 1.0 Universal (2023)
-
-	https://github.com/Exunys
-
-]]
-
---// Cache
-
 local pcall, getgenv, next, setmetatable, Vector2new, CFramenew, Color3fromRGB, Drawingnew, TweenInfonew, stringupper, mousemoverel = pcall, getgenv, next, setmetatable, Vector2.new, CFrame.new, Color3.fromRGB, Drawing.new, TweenInfo.new, string.upper, mousemoverel or (Input and Input.MouseMove)
 
 --// Launching checks
 
-if not getgenv().AirHub or getgenv().AirHub.Aimbot then return end
+if not getgenv().Eclipse or getgenv().Config.Aimbot then return end
 
 --// Services
 
@@ -29,7 +19,7 @@ local RequiredDistance, Typing, Running, ServiceConnections, Animation, Original
 
 --// Environment
 
-getgenv().AirHub.Aimbot = {
+getgenv().Config.Aimbot = {
 	Settings = {
 		Enabled = false,
 		TeamCheck = false,
@@ -58,7 +48,7 @@ getgenv().AirHub.Aimbot = {
 	FOVCircle = Drawingnew("Circle")
 }
 
-local Environment = getgenv().AirHub.Aimbot
+local Environment = getgenv().Config.Aimbot
 
 --// Core Functions
 
@@ -193,8 +183,8 @@ function Environment.Functions:Exit()
 
 	Environment.FOVCircle:Remove()
 
-	getgenv().AirHub.Aimbot.Functions = nil
-	getgenv().AirHub.Aimbot = nil
+	getgenv().Config.Aimbot.Functions = nil
+	getgenv().Config.Aimbot = nil
 
 	Load = nil; ConvertVector = nil; CancelLock = nil; GetClosestPlayer = nil;
 end
